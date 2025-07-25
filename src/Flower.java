@@ -1,4 +1,9 @@
-public class Flower {
+import java.io.Serial;
+import java.io.Serializable;
+
+public class Flower implements Serializable {
+    @Serial
+    private static final long serialVersionUID = -3175526916404368353L;
     private String name;
     private String color;
     private int quantity;
@@ -13,6 +18,15 @@ public class Flower {
         this.price = price;
         this.bloomSeason = bloomSeason;
         this.fragrance = fragrance;
+    }
+
+    public Flower(Flower other) {
+        this.name = other.name;
+        this.color = other.color;
+        this.quantity = other.quantity;
+        this.price = other.price;
+        this.bloomSeason = other.bloomSeason;
+        this.fragrance = other.fragrance;
     }
 
     public String getName() {

@@ -1,4 +1,10 @@
-public abstract class UserModel {
+import java.io.Serial;
+import java.io.Serializable;
+
+public abstract class UserModel implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
+
     private String login;
     private String passw;
 
@@ -13,14 +19,6 @@ public abstract class UserModel {
 
     public String getPassw() {
         return passw;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public void setPassw(String passw) {
-        this.passw = passw;
     }
 
     public abstract void getRole();
